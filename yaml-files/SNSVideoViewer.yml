@@ -12,10 +12,14 @@ video:
       :type: TIMESTAMPTZ
     - _rperm: TEXT ARRAY
     - _wperm: TEXT ARRAY
-    - socialNetworkName: TEXT
+    - socialNetworkName:
+      :source: _p_socialNetworkName
+      :type: TEXT
     - visibleTo: JSONB
     - broadcast: TEXT
-    - userDetails: TEXT
+    - userDetails:
+      :source: _p_userDetails
+      :type: TEXT
     - totalLikes: DOUBLE PRECISION
     - totalDiamonds: DOUBLE PRECISION
     - currentlyViewing: BOOLEAN

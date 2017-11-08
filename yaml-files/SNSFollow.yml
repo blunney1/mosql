@@ -13,8 +13,12 @@ video:
     - _rperm: TEXT ARRAY
     - _wperm: TEXT ARRAY
     - followerLastLogin: TIMESTAMPTZ
-    - follower: TEXT
+    - follower:
+      :source: _p_follower
+      :type: TEXT
     - followee: TEXT
+      :source: _p_followee
+      :type: TEXT
     - type: TEXT
     :meta:
       :table: SNSFollow

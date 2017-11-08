@@ -15,10 +15,14 @@ video:
     - activeUntil: TIMESTAMPTZ
     - activeUntil: TIMESTAMPTZ
     - reports: JSONB
-    - socialNetwork: TEXT
+    - socialNetwork:
+      :source: _p_socialNetwork
+      :type: TEXT
     - language: TEXT
     - broadcasterAge: DOUBLE PRECISION
-    - userDetails: TEXT
+    - userDetails:
+      :source: _p_userDetails
+      :type: TEXT
     - isActive: BOOLEAN
     - isHidden: BOOLEAN
     - isQuestionable: BOOLEAN

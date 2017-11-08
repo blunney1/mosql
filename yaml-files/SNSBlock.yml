@@ -12,8 +12,12 @@ video:
       :type: TIMESTAMPTZ
     - _rperm: TEXT ARRAY
     - _wperm: TEXT ARRAY
-    - blockedBy: TEXT
+    - blockedBy:
+      :source: _p_blockedBy
+      :type: TEXT
     - blocked: TEXT
+      :source: _p_blocked
+      :type: TEXT
     - memberId: DOUBLE PRECISION
     - networkName: TEXT
     :meta:

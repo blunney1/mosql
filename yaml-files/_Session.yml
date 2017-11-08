@@ -13,7 +13,9 @@ video:
     - _rperm: TEXT ARRAY
     - _wperm: TEXT ARRAY
     - restricted: BOOLEAN
-    - user: TEXT
+    - user:
+      :source: _p_user
+      :type: TEXT
     - installationId: TEXT
     - sessionToken: TEXT
     - expiresAt: TIMESTAMPTZ

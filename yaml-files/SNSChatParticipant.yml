@@ -14,7 +14,11 @@ video:
     - _wperm: TEXT ARRAY
     - profilePic: JSONB
     - user: TEXT
+      :source: _p_user
+      :type: TEXT
     - chat: TEXT
+      :source: _p_chat
+      :type: TEXT
     - chatName: TEXT
     - hasSentMessage: BOOLEAN
     - hasSentGift: BOOLEAN

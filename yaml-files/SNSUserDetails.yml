@@ -16,11 +16,15 @@ video:
     - birthDate: TIMESTAMPTZ
     - location: JSONB
     - memberId:  DOUBLE PRECISION
-    - socialNetwork: TEXT
+    - socialNetwork:
+      :source: _p_socialNetwork
+      :type: TEXT
     - firstName: TEXT
     - lastName: TEXT
     - gender: TEXT
-    - user: TEXT
+    - user:
+      :source: _p_user
+      :type: TEXT
     - badge: JSONB
     :meta:
       :table: SNSUserDetails

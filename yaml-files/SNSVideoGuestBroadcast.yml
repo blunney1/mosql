@@ -12,9 +12,13 @@ video:
       :type: TIMESTAMPTZ
     - _rperm: TEXT ARRAY
     - _wperm: TEXT ARRAY
-    - videoViewer: TEXT
+    - videoViewer:
+      :source: _p_videoViewer
+      :type: TEXT
     - status: TEXT
-    - broadcast: TEXT
+    - broadcast:
+      :source: _p_broadcast
+      :type: TEXT
     - streamClientId: TEXT
     - requestedAt: TIMESTAMPTZ
     :meta:
