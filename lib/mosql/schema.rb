@@ -197,6 +197,8 @@ module MoSQL
         end
       when BSON::DBRef
         v.object_id.to_s
+      when String
+        v.scrub!.delete("\u{0000}")
       else
         v
       end
