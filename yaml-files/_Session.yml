@@ -1,0 +1,24 @@
+video:
+  _Session:
+    :columns:
+    - objectId:
+      :source: _id
+      :type: TEXT
+    - createdAt:
+      :source: _created_at
+      :type: TIMESTAMPTZ
+    - updatedAt:
+      :source: _updated_at
+      :type: TIMESTAMPTZ
+    - _rperm: TEXT ARRAY
+    - _wperm: TEXT ARRAY
+    - restricted: BOOLEAN
+    - user: TEXT
+    - installationId: TEXT
+    - sessionToken: TEXT
+    - expiresAt: TIMESTAMPTZ
+    - createdWith: JSONB
+    :meta:
+      :table: _Session
+      :extra_props: false
+

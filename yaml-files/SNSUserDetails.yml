@@ -1,0 +1,28 @@
+video:
+  SNSUserDetails:
+    :columns:
+    - objectId:
+      :source: _id
+      :type: TEXT
+    - createdAt:
+      :source: _created_at
+      :type: TIMESTAMPTZ
+    - updatedAt:
+      :source: _updated_at
+      :type: TIMESTAMPTZ
+    - _rperm: TEXT ARRAY
+    - _wperm: TEXT ARRAY
+    - profilePic: JSONB
+    - birthDate: TIMESTAMPTZ
+    - location: JSONB
+    - memberId:  DOUBLE PRECISION
+    - socialNetwork: TEXT
+    - firstName: TEXT
+    - lastName: TEXT
+    - gender: TEXT
+    - user: TEXT
+    - badge: JSONB
+    :meta:
+      :table: SNSUserDetails
+      :extra_props: false
+

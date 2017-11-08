@@ -1,0 +1,23 @@
+video:
+  SNSChatMessage:
+    :columns:
+    - objectId:
+      :source: _id
+      :type: TEXT
+    - createdAt:
+      :source: _created_at
+      :type: TIMESTAMPTZ
+    - updatedAt:
+      :source: _updated_at
+      :type: TIMESTAMPTZ
+    - _rperm: TEXT ARRAY
+    - _wperm: TEXT ARRAY
+    - type: TEXT
+    - text: TEXT
+    - participant: TEXT
+    - chat: TEXT
+    - chatName: TEXT
+    :meta:
+      :table: SNSChatMessage
+      :extra_props: false
+

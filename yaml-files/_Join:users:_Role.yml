@@ -1,0 +1,13 @@
+video:
+  _Join:users:_Role:
+    :columns:
+    - objectId:
+      :source: _id
+      :type: TEXT
+    - _created_at: TIMESTAMPTZ
+    - relatedId: VARCHAR(120)
+    - owningId: VARCHAR(120)
+    :meta:
+      :table: _Join:users:_Role
+      :extra_props: false
+

@@ -1,0 +1,34 @@
+video:
+  SNSVideo:
+    :columns:
+    - objectId:
+      :source: _id
+      :type: TEXT
+    - createdAt:
+      :source: _created_at
+      :type: TIMESTAMPTZ
+    - updatedAt:
+      :source: _updated_at
+      :type: TIMESTAMPTZ
+    - _rperm: TEXT ARRAY
+    - _wperm: TEXT ARRAY
+    - activeUntil: TIMESTAMPTZ
+    - activeUntil: TIMESTAMPTZ
+    - reports: JSONB
+    - socialNetwork: TEXT
+    - language: TEXT
+    - broadcasterAge: DOUBLE PRECISION
+    - userDetails: TEXT
+    - isActive: BOOLEAN
+    - isHidden: BOOLEAN
+    - isQuestionable: BOOLEAN
+    - totalLikes: DOUBLE precision
+    - totalDiamonds: DOUBLE precision
+    - totalViewers: DOUBLE precision
+    - currentViewers: DOUBLE precision
+    - thumbnailUrl: TEXT
+    - broadcasterLifetimeDiamonds: DOUBLE precision
+    :meta:
+      :table: SNSVideo
+      :extra_props: false
+

@@ -4,4 +4,3 @@ Gemfile.lock
 .byebug_history
 mosql-0.4.3.gem
 results/
-yaml-files/

@@ -1,0 +1,26 @@
+video:
+  SNSVideoViewer:
+    :columns:
+    - objectId:
+      :source: _id
+      :type: TEXT
+    - createdAt:
+      :source: _created_at
+      :type: TIMESTAMPTZ
+    - updatedAt:
+      :source: _updated_at
+      :type: TIMESTAMPTZ
+    - _rperm: TEXT ARRAY
+    - _wperm: TEXT ARRAY
+    - socialNetworkName: TEXT
+    - visibleTo: JSONB
+    - broadcast: TEXT
+    - userDetails: TEXT
+    - totalLikes: DOUBLE PRECISION
+    - totalDiamonds: DOUBLE PRECISION
+    - currentlyViewing: BOOLEAN
+    - isBlocked: BOOLEAN
+    :meta:
+      :table: SNSVideoViewer
+      :extra_props: false
+

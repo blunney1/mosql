@@ -1,0 +1,23 @@
+video:
+  SNSVideoGuestBroadcast:
+    :columns:
+    - objectId:
+      :source: _id
+      :type: TEXT
+    - createdAt:
+      :source: _created_at
+      :type: TIMESTAMPTZ
+    - updatedAt:
+      :source: _updated_at
+      :type: TIMESTAMPTZ
+    - _rperm: TEXT ARRAY
+    - _wperm: TEXT ARRAY
+    - videoViewer: TEXT
+    - status: TEXT
+    - broadcast: TEXT
+    - streamClientId: TEXT
+    - requestedAt: TIMESTAMPTZ
+    :meta:
+      :table: SNSVideoGuestBroadcast
+      :extra_props: false
+

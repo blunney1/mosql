@@ -1,0 +1,28 @@
+video:
+  _User:
+    :columns:
+    - objectId:
+      :source: _id
+      :type: TEXT
+    - createdAt:
+      :source: _created_at
+      :type: TIMESTAMPTZ
+    - updatedAt:
+      :source: _updated_at
+      :type: TIMESTAMPTZ
+    - _rperm: TEXT ARRAY
+    - _wperm: TEXT ARRAY
+    - username: TEXT
+    - email: TEXT
+    - emailVerified: BOOLEAN
+    - authData: JSONB
+    - _hashed_password: TEXT
+    - birthDate: TIMESTAMPTZ
+    - locale: TEXT
+    - latitude: DOUBLE PRECISION
+    - longitude: DOUBLE PRECISION
+    - banExpirationDate: TIMESTAMPTZ
+    :meta:
+      :table: _User
+      :extra_props: false
+

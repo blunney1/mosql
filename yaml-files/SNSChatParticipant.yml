@@ -1,0 +1,27 @@
+video:
+  SNSChatParticipant:
+    :columns:
+    - objectId:
+      :source: _id
+      :type: TEXT
+    - createdAt:
+      :source: _created_at
+      :type: TIMESTAMPTZ
+    - updatedAt:
+      :source: _updated_at
+      :type: TIMESTAMPTZ
+    - _rperm: TEXT ARRAY
+    - _wperm: TEXT ARRAY
+    - profilePic: JSONB
+    - user: TEXT
+    - chat: TEXT
+    - chatName: TEXT
+    - hasSentMessage: BOOLEAN
+    - hasSentGift: BOOLEAN
+    - firstName: TEXT
+    - lastName: TEXT
+    - banExpirationDate: TIMESTAMPTZ
+    :meta:
+      :table: SNSChatParticipant
+      :extra_props: false
+
