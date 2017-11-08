@@ -52,7 +52,7 @@ module MoSQL
       begin
         @schema.copy_data(table.db, ns, items)
       rescue Sequel::DatabaseError => e
-        log.debug("Bulk insert error (#{e}), attempting invidual upserts...")
+        log.debug("Bulk insert error (#{e}), attempting individual upserts...")
         cols = @schema.all_columns(@schema.find_ns(ns))
         items.each do |it|
           h = {}
@@ -133,6 +133,7 @@ module MoSQL
       log.info("Importing for #{ns}...")
       count = 0
       batch = []
+      #batch = Array.new(BATCH)
       table = @sql.table_for_ns(ns)
       unless options[:no_drop_tables] || did_truncate[table.first_source]
         table.truncate
@@ -145,10 +146,12 @@ module MoSQL
         with_retries do
           cursor.each do |obj|
             batch << @schema.transform(ns, obj)
+            #batch[count] = @schema.transform(ns, obj)
             count += 1
 
             if batch.length >= BATCH
-              sql_time += track_time do
+            #if count >= BATCH - 1
+              sql_time = track_time do
                 bulk_upsert(table, ns, batch)
               end
               elapsed = Time.now - start

@@ -299,7 +299,7 @@ module MoSQL
         pg.put_copy_end
         begin
           pg.get_result.check
-        rescue PGError => e
+        rescue PG::Error => e
           db.send(:raise_error, e)
         end
       end
@@ -319,6 +319,8 @@ module MoSQL
         val.strftime("%FT%T.%6N %z")
       when Sequel::SQL::Blob
         "\\\\x" + [val].pack("h*")
+      when Sequel::Postgres::PGArray
+        val.to_s.tr_s('[]', '{}').tr_s('"', '')
       else
         val.to_s.gsub(/([\\\t\n\r])/, '\\\\\\1')
       end
