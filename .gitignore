@@ -1,8 +1,7 @@
 collections.yml
 /.bundle/
 Gemfile.lock
-mosql-0.4.3.gem
-*.out
 .byebug_history
-*.yml
-
+mosql-0.4.3.gem
+results/
+yaml-files/
