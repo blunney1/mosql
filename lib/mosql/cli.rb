@@ -7,8 +7,6 @@ module MoSQL
   class CLI
     include MoSQL::Logging
 
-    BATCH       = 1000
-
     attr_reader :args, :options, :tailer
 
     def self.run(args)
@@ -37,7 +35,8 @@ module MoSQL
         :collections => 'collections.yml',
         :sql    => 'postgres:///',
         :mongo  => 'mongodb://localhost',
-        :verbose => 0
+        :verbose => 0,
+        :batch_size => 1000
       }
       optparse = OptionParser.new do |opts|
         opts.banner = "Usage: #{$0} [options] "
@@ -49,6 +48,10 @@ module MoSQL
 
         opts.on('-v', "Increase verbosity") do
           @options[:verbose] += 1
+        end
+
+        opts.on("-b", "--batch-size [1000]", "Batch size - defaults to 1000") do |size|
+          @options[:batch_size] = size
         end
 
         opts.on("-c", "--collections [collections.yml]", "Collection map YAML file") do |file|

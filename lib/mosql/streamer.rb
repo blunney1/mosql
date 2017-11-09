@@ -2,7 +2,7 @@ module MoSQL
   class Streamer
     include MoSQL::Logging
 
-    BATCH = 1000
+#    BATCH = 1000
 
     attr_reader :options, :tailer
 
@@ -133,7 +133,6 @@ module MoSQL
       log.info("Importing for #{ns}...")
       count = 0
       batch = []
-      #batch = Array.new(BATCH)
       table = @sql.table_for_ns(ns)
       unless options[:no_drop_tables] || did_truncate[table.first_source]
         table.truncate
@@ -142,15 +141,16 @@ module MoSQL
 
       start    = Time.now
       sql_time = 0
-      collection.find(filter, :batch_size => BATCH) do |cursor|
+      #collection.find(filter, :batch_size => BATCH) do |cursor|
+      collection.find(filter, :batch_size => options[:batch_size]) do |cursor|
         with_retries do
           cursor.each do |obj|
             batch << @schema.transform(ns, obj)
             #batch[count] = @schema.transform(ns, obj)
             count += 1
 
-            if batch.length >= BATCH
-            #if count >= BATCH - 1
+            #if batch.length >= BATCH
+            if batch.length >= options[:batch_size]
               sql_time = track_time do
                 bulk_upsert(table, ns, batch)
               end
