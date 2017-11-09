@@ -4,6 +4,15 @@ module MoSQL
   class Schema
     include MoSQL::Logging
 
+    PREFIXES = [  "SNSChat$",
+                  "SNSChatParticipant$",
+                  "SNSSocialNetwork$",
+                  "SNSUserDetails$",
+                  "SNSVideo$",
+                  "SNSVideoViewer$",
+                  "_User$"
+                ]
+
     def to_array(lst)
       lst.map do |ent|
         col = nil
@@ -185,6 +194,13 @@ module MoSQL
       end
     end
 
+    def remove_prefixes(v)
+      PREFIXES.each do |prefix|
+        v.sub!(prefix, "") if v.start_with?(prefix)
+      end
+      v
+    end
+
     def transform_primitive(v, type=nil)
       case v
       when BSON::ObjectId, Symbol
@@ -198,6 +214,7 @@ module MoSQL
       when BSON::DBRef
         v.object_id.to_s
       when String
+        remove_prefixes(v)
         v.scrub!.delete("\u{0000}")
       else
         v
