@@ -12,11 +12,9 @@ video:
       :type: TIMESTAMPTZ
     - _rperm: TEXT ARRAY
     - _wperm: TEXT ARRAY
-    - socialNetworkName:
-      :source: _p_socialNetworkName
+    - broadcast:
+      :source: _p_broadcast
       :type: TEXT
-    - visibleTo: JSONB
-    - broadcast: TEXT
     - userDetails:
       :source: _p_userDetails
       :type: TEXT
@@ -27,4 +25,3 @@ video:
     :meta:
       :table: SNSVideoViewer
       :extra_props: false
-

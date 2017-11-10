@@ -13,7 +13,6 @@ video:
     - _rperm: TEXT ARRAY
     - _wperm: TEXT ARRAY
     - activeUntil: TIMESTAMPTZ
-    - activeUntil: TIMESTAMPTZ
     - reports: JSONB
     - socialNetwork:
       :source: _p_socialNetwork
@@ -35,4 +34,3 @@ video:
     :meta:
       :table: SNSVideo
       :extra_props: false
-

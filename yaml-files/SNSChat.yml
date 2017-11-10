@@ -1,4 +1,4 @@
-SNSChat.ymlvideo:
+video:
   SNSChat:
     :columns:
     - objectId:
@@ -17,4 +17,3 @@ SNSChat.ymlvideo:
     :meta:
       :table: SNSChat
       :extra_props: false
-
